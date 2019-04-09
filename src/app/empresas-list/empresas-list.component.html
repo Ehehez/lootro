@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Lista de Empresas</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let empresa of empresas">
+        <!--<img mat-list-avatar src="{{car.giphyUrl}}" alt="{{empresas.nombreEmpresa}}">-->
+        <h3 mat-line>{{empresa.nombreEmpresa}}</h3>
+        <button mat-fab color="red" type="button" routerLink="/empresas-edit/{{empresa.id}}">Edit</button>
+        <button mat-fab color="red" type="button" (click)="delete(empresa.id)">Delete</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+
+  <button mat-fab color="primary" [routerLink]="['/empresas-add']">Add</button>
+</mat-card>
